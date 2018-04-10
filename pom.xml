@@ -21,11 +21,6 @@
 	</properties>
 
 	<dependencies>
-		<!-- Gson -->
-		<dependency>
-			<groupId>com.google.code.gson</groupId>
-			<artifactId>gson</artifactId>
-		</dependency>
 
 		<!-- Spring dependencies -->
 		<dependency>
