@@ -71,7 +71,7 @@ Todas as mensagens que possuem um corpo estão no formato JSON (Content-Type: ap
 {
   "name": "Nome",
   "x": 20,
-  "y": 10
+  "y": 15
 }
 ```
 * Saída: Também é utilizado o mesmo objeto.
@@ -96,24 +96,73 @@ Todas as mensagens que possuem um corpo estão no formato JSON (Content-Type: ap
 }
 ```
 
-### Buscar por ID
+### Buscar por ID:
 * Método: GET
 * URL: http://localhost:8080/poi/1
 * Saída: Em caso de sucesso será retornado o objeto, em caso de erro será retornada uma resposta no mesmo padrão das anteriores com um erro.
-** Sucesso:
+  * Sucesso:
 ```json
 {
-    "id": 2,
+    "id": 1,
     "name": "Nome",
     "x": 20,
     "y": 10
 }
 ```
-** Erro:
+  * Erro:
 ```json
 {
     "status": 4,
     "description": "POI not found, id: 5",
     "id": null
 }
+```
+
+### Buscar Todos os POIs:
+* Método: GET
+* URL: http://localhost:8080/poi/
+* Saída: Em caso de sucesso será retornada uma lista de objetos, no caso de falha a resposta é similar ao serviço anterior. Se não existir nenhum POI na base será retornada uma lista vazia:
+```json
+[
+    {
+        "id": 1,
+        "name": "Nome",
+        "x": 20,
+        "y": 10
+    },
+    {
+        "id": 2,
+        "name": "Nome2",
+        "x": 25,
+        "y": 15
+    },
+    {
+        "id": 3,
+        "name": "Nome3",
+        "x": 30,
+        "y": 30
+    }
+]
+```
+
+### Buscar POIs com base em um ponto e distância:
+* Método: GET
+* URL:http://localhost:8080/poi/by-distance?x=18&y=10&distance=10
+* Entrada: É necessário passar três valores na chamada: Os valores das coordenadas do ponto (x e y) e a distância máxima (distance). Todos os pontos que estiverem a uma distância igual ou menor a esta distância máxima serão exibidos em forma de lista. Assim como nos serviços acima, em caso de erro será retornada uma resposta no modelo anteriormente apresentado.
+* Saída:
+```json
+[
+    {
+        "id": 1,
+        "name": "Nome",
+        "x": 20,
+        "y": 10
+    },
+    {
+        "id": 2,
+        "name": "Nome2",
+        "x": 25,
+        "y": 15
+    }
+]
 ```
