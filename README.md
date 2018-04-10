@@ -21,7 +21,7 @@ create table poi (
   ycoordinate int(6) not null
 )
 ```
-## Frameworks e Pré-Requisitos
+## Frameworks/Pré-Requisitos e Execução
 ```
 * Java 8
 * Spring MVC
@@ -93,5 +93,27 @@ Todas as mensagens que possuem um corpo estão no formato JSON (Content-Type: ap
   "status": 0,
   "description": "Success removing POI.",
   "id": 1
+}
+```
+
+### Buscar por ID
+* Método: GET
+* URL: http://localhost:8080/poi/1
+* Saída: Em caso de sucesso será retornado o objeto, em caso de erro será retornada uma resposta no mesmo padrão das anteriores com um erro.
+** Sucesso:
+```json
+{
+    "id": 2,
+    "name": "Nome",
+    "x": 20,
+    "y": 10
+}
+```
+** Erro:
+```json
+{
+    "status": 4,
+    "description": "POI not found, id: 5",
+    "id": null
 }
 ```
