@@ -1,9 +1,9 @@
 # xy-inc
-Projeto desenvolvido utilizando spring boot, com a ideia de expor serviços via REST que possibilitam cadastrar, buscar, deletar POIs (Points od Interest).
+Projeto desenvolvido utilizando spring boot, com a ideia de expor serviços via REST que possibilitam cadastrar, buscar, deletar POIs (Point Of Interest).
 Pelo fato de expor os serviços desta forma é muito fácil escalar a aplicação (basta utilizar balanceadores), além de facilitar a integração com qualquer aplicação de qualquer linguagem.
 
 ## Banco de Dados
-Para o armazenamento e consulta dos dados incluídos o banco utilizado foi o MySQL.
+Para o armazenamento e consulta dos dados, o banco utilizado foi o MySQL.
 As informações da conexão com o mesmo estão no arquivo "application.properties"
 ```
 spring.datasource.url=jdbc:mysql://localhost:3306/GPSPlatform
@@ -100,7 +100,7 @@ Todas as mensagens que possuem um corpo estão no formato JSON (Content-Type: ap
 * Método: GET
 * URL: http://localhost:8080/poi/1
 * Saída: Em caso de sucesso será retornado o objeto, em caso de erro será retornada uma resposta no mesmo padrão das anteriores com um erro.
-  * Sucesso:
+* Sucesso:
 ```json
 {
     "id": 1,
@@ -109,7 +109,7 @@ Todas as mensagens que possuem um corpo estão no formato JSON (Content-Type: ap
     "y": 10
 }
 ```
-  * Erro:
+* Erro:
 ```json
 {
     "status": 4,
