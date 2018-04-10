@@ -21,3 +21,19 @@ create table poi (
   ycoordinate int(6) not null
 )
 ```
+## Frameworks e Pré-Requisitos
+```
+* Java 8
+* Spring MVC
+* Spring Boot
+* Apache Maven
+* JUnit
+* MySQL
+* H2
+```
+* Para compilar a aplicação, basta digitar o seguinte comando na pasta do projeto:
+`
+mvn clean install
+`
+
+
