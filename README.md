@@ -45,19 +45,53 @@ Todas as mensagens que possuem um corpo estão no formato JSON (Content-Type: ap
 
 ### Inserir/Cadastrar POI na base:
 * Método: POST
+* URL: http://localhost:8080/poi/
 * Entrada
 ```json
 {
-"name": "Nome",
-"x": 20,
-"y": 10
+  "name": "Nome",
+  "x": 20,
+  "y": 10
 }
 ```
 * Retorno: Este método retorna uma resposta com um status, descrição e ID (caso de sucesso). Para os casos de sucesso o status é 0.
 ```json
 {
-"status": 0,
-"description": "Success saving POI.",
-"id": 1
+  "status": 0,
+  "description": "Success saving POI.",
+  "id": 1
+}
+```
+
+### Atualizar POI:
+* Método: PUT
+* URL: http://localhost:8080/poi/1
+* Entrada: Mesmo objeto utilizado para cadastrar o POI. A diferença está na URL onde é enviado o ID do mesmo.
+```json
+{
+  "name": "Nome",
+  "x": 20,
+  "y": 10
+}
+```
+* Saída: Também é utilizado o mesmo objeto.
+```json
+{
+  "status": 0,
+  "description": "Success updating POI.",
+  "id": 1
+}
+```
+
+### Deletar POI:
+* Método: DELETE
+* URL: http://localhost:8080/poi/1
+* Entrada: Não há necessidade de enviar nenhum objeto, apenas o ID na URL
+* Saída: No mesmo padrão das anteriores:
+```json
+{
+  "status": 0,
+  "description": "Success removing POI.",
+  "id": 1
 }
 ```
