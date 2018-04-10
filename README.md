@@ -13,11 +13,11 @@ spring.datasource.password=password
 * Neste caso foi usado um banco local, com um "schema" de nome "GPSPlatform", para casos em que o banco é remoto, ou será utilizada outra base, é possível alterar os valores das propriedades acima e executar a aplicação normalmente.
 * Existe um arquivo similar "test.properties", mas o mesmo é utilizado apenas para os testes automatizados.
 * Para criar a tabela (única) que armazena os dados dos POIs basta executar o script abaixo:
-```
+```sql
 create table poi (
-id int(6) unsigned auto_increment primary key,
-name varchar(50) not null,
-xcoordinate int(6) not null,
-ycoordinate int(6) not null
+  id int(6) unsigned auto_increment primary key,
+  name varchar(50) not null,
+  xcoordinate int(6) not null,
+  ycoordinate int(6) not null
 )
 ```
