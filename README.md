@@ -32,8 +32,32 @@ create table poi (
 * H2
 ```
 * Para compilar a aplicação, basta digitar o seguinte comando na pasta do projeto:
-`
+```
 mvn clean install
-`
+```
+* Finalmente para executá-la, além do banco de dados (MySQL) estar preparado, basta digitar o seguinte:
+```
+mvn spring-boot:run
+```
+## Testes/Utilização da aplicação
+Seguem abaixo todos os serviços expostos, para cada um deles está definido o método e quais são as variáveis/objetos de entrada.
+Todas as mensagens que possuem um corpo estão no formato JSON (Content-Type: application/json)
 
-
+### Inserir/Cadastrar POI na base:
+* Método: POST
+* Entrada
+```json
+{
+"name": "Nome",
+"x": 20,
+"y": 10
+}
+```
+* Retorno: Este método retorna uma resposta com um status, descrição e ID (caso de sucesso). Para os casos de sucesso o status é 0.
+```json
+{
+"status": 0,
+"description": "Success saving POI.",
+"id": 1
+}
+```
